@@ -4,6 +4,11 @@ namespace CafeSource;
 
 class Post {
 
+    public static function all()
+    {
+        return $_POST;
+    }
+
     public static function get($key)
     {
         return $_POST[$key];

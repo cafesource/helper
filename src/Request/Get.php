@@ -4,6 +4,11 @@ namespace CafeSource\Request;
 
 class Get {
 
+    public static function all()
+    {
+        return $_GET;
+    }
+
     public static function get($key)
     {
         return $_GET[$key];
