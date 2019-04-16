@@ -1,0 +1,19 @@
+{
+    "name": "cafesource/helper",
+    "description": "Prerequisites and Tools Required",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mahdi Akbari",
+            "email": "mahdi75akbari@gmail.com"
+        },
+        {
+            "name": "Javad Gholipoor",
+            "email": "apkmaker74@gmail.com"
+        }
+    ],
+    "require": {
+    	"php": "^5.6 || ^7.2"
+    }
+}
