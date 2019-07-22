@@ -1,0 +1,21 @@
+{
+    "name": "larabase/helpers",
+    "description": "",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mahdi Akbari",
+            "email": "mahdi75akbari@gmail.com"
+        },
+        {
+            "name": "Javad Gholipoor",
+            "email": "apkmaker74@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Larabase\\Helper\\" : ""
+        }
+    }
+}
