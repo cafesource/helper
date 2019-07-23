@@ -20,12 +20,12 @@
         "email": "apkmaker74@gmail.com"
     },
     "autoload": {
+        "files": [
+            "autoload.php"
+        ],
         "psr-4": {
             "Larabase\\Helper\\" : "Classes/"
         }
     },
-    "include-path": [
-        "Helpers/"
-    ],
     "minimum-stability": "dev"
 }
