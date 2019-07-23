@@ -1,6 +1,6 @@
 <?php
 
-use Larabase\Cms\Helper\Converter;
+use Larabase\Helper\Converter;
 
 if(!function_exists('toEnglish')){
     function toEnglish($string){

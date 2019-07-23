@@ -1,6 +1,6 @@
 <?php
 
-use Larabase\Cms\Helper\Mobile;
+use Larabase\Helper\Mobile;
 
 if(!function_exists('sanitizeMobile')){
     function sanitizeMobile($phone){

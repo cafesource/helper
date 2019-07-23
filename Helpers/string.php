@@ -1,6 +1,6 @@
 <?php
 
-use Larabase\Cms\Helper\Str;
+use Larabase\Helper\Str;
 
 if(!function_exists('slug')){
     function slug($sting, $separator = '-'){

@@ -6,17 +6,26 @@
     "authors": [
         {
             "name": "Mahdi Akbari",
-            "email": "mahdi75akbari@gmail.com"
+            "email": "mahdi75akbari@gmail.com",
+            "role": "Developer"
         },
         {
             "name": "Javad Gholipoor",
-            "email": "apkmaker74@gmail.com"
+            "email": "apkmaker74@gmail.com",
+            "role": "Developer"
         }
     ],
+    "support": {
+        "email": "mahdi75akbari@gmail.com",
+        "email": "apkmaker74@gmail.com"
+    },
     "autoload": {
         "psr-4": {
-            "Larabase\\Helper\\" : ""
+            "Larabase\\Helper\\" : "Classes/"
         }
     },
+    "include-path": [
+        "Helpers/"
+    ],
     "minimum-stability": "dev"
 }

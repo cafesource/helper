@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Arr;
+use Larabase\Helper\Arr;
 
 if(!function_exists('isJson')){
     function isJson($string){

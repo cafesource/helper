@@ -1,5 +1,5 @@
 <?php
-namespace Larabase\Cms\Helper;
+namespace Larabase\Helper;
 
 class Date
 {

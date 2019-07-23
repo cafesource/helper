@@ -1,6 +1,6 @@
 <?php
 
-use Larabase\Cms\Helper\Client;
+use Larabase\Helper\Client;
 
 if(!function_exists('ip')){
     function ip(){

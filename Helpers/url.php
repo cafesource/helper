@@ -1,6 +1,6 @@
 <?php
 
-use Larabase\Cms\Helper\Url;
+use Larabase\Helper\Url;
 
 if(!function_exists('fileSize')){
     function fileSize($url, $useHead = true){

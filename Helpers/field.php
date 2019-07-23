@@ -1,6 +1,6 @@
 <?php
 
-use Larabase\Cms\Helper\Field;
+use Larabase\Helper\Field;
 
 if(!function_exists('selected')){
     function selected($name, $value){
