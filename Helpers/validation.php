@@ -10,7 +10,7 @@ if(!function_exists('email')){
 
 if(!function_exists('mobile')){
     function mobile($number){
-        return Validation::email($number);
+        return Validation::mobile($number);
     }
 }
 
