@@ -1,0 +1,42 @@
+{
+  "name": "cafesource/helper",
+  "description": "The cafesource helper",
+  "keywords": [
+    "cafesource",
+    "laravel"
+  ],
+  "license": "MIT",
+  "homepage": "https://cafesource.net",
+  "authors": [
+    {
+      "name": "Mahdi akbari",
+      "email": "mahdi75akbari@gmail.com"
+    }
+  ],
+  "require": {
+    "ext-json": "*",
+    "ext-mbstring": "*",
+    "ext-openssl": "*"
+  },
+  "provide": {
+    "psr/container-implementation": "1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Cafesource\\Helper\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "files": []
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.x-dev"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
