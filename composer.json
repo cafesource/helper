@@ -17,7 +17,7 @@
     "ext-json": "*",
     "ext-curl": "*",
     "ext-mbstring": "*",
-    "ext-openssl": "*",
+    "ext-openssl": "*"
   },
   "provide": {
     "psr/container-implementation": "1.0"
