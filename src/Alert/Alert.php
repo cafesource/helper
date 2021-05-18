@@ -219,6 +219,24 @@ class Alert
     }
 
     /**
+     * @param string|null  $name
+     * @param string|array $default
+     */
+    public function getAttributes( string $name = null, $default = null ) : string
+    {
+        $attributes = !is_null($name) ? $this->get($name, []) : [];
+
+        if ( !is_null($default) )
+            $attributes = array_merge($default, $attributes);
+
+        $output = '';
+        foreach ( $attributes as $key => $value )
+            $output .= " {$key}='{$value}'";
+
+        return $output;
+    }
+
+    /**
      * @return string|null
      */
     public function getContent() : ?string
