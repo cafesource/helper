@@ -48,6 +48,17 @@ class Str
 
         return $randomString;
     }
+
+    /**
+     * @param $string
+     *
+     * @return bool
+     */
+    function isJson( $string ) : bool
+    {
+        json_decode($string);
+        return (json_last_error() == JSON_ERROR_NONE);
+    }
 }
 
 ?>
