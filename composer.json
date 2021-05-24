@@ -25,7 +25,10 @@
   "autoload": {
     "psr-4": {
       "Cafesource\\Helper\\": "src/"
-    }
+    },
+    "files": [
+      "helpers/helpers.php"
+    ]
   },
   "autoload-dev": {
     "files": []
