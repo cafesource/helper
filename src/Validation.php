@@ -11,7 +11,7 @@ class Validation
      *
      * @return bool
      */
-    public function username( $username )
+    public function username( $username ) : bool
     {
         # for english chars + numbers only
         if ( preg_match('/^[a-zA-Z0-9]{5,}$/', $username) )
@@ -27,7 +27,7 @@ class Validation
      *
      * @return bool
      */
-    public static function email( $email )
+    public static function email( $email ) : bool
     {
         if ( preg_match('/^([0-9a-zA-Z\w])@([a-zA-Z]{3,5}).([a-zA-Z]{2,4})/', $email) )
             return true;
@@ -42,7 +42,7 @@ class Validation
      *
      * @return bool
      */
-    public static function mobile( $number )
+    public static function mobile( $number ) : bool
     {
         if ( preg_match('/^(?:09|\+?63)(?:\d(:?-)?){9,10}$/', $number) )
             return true;
@@ -57,7 +57,7 @@ class Validation
      *
      * @return bool
      */
-    public static function nationalCode( $nationalCode )
+    public static function nationalCode( $nationalCode ) : bool
     {
         if ( !preg_match('/^[0-9]{10}$/', $nationalCode) )
             return false;
@@ -79,7 +79,12 @@ class Validation
         return false;
     }
 
-    public function tel( $tel )
+    /**
+     * @param $tel
+     *
+     * @return bool
+     */
+    public function tel( $tel ) : bool
     {
         if ( is_numeric($tel) )
             return true;
@@ -87,7 +92,12 @@ class Validation
         return false;
     }
 
-    public function zipCode( $code )
+    /**
+     * @param $code
+     *
+     * @return bool
+     */
+    public function zipCode( $code ) : bool
     {
         if ( is_numeric($code) && strlen($code) == 10 )
             return true;
