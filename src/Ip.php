@@ -7,7 +7,7 @@ namespace Cafesource\Helper;
 class Ip
 {
     /**
-     * @return array|false|string
+     * @return float|string
      */
     public static function ip()
     {
@@ -76,7 +76,7 @@ class Ip
      *
      * @param string $ip
      *
-     * @return boolean - 4/6
+     * @return int - 4/6
      */
     public static function version( $ip )
     {
@@ -90,13 +90,12 @@ class Ip
      *
      * @return boolean - true/false
      */
-    public static function isValid( $ip )
+    public static function isValid( $ip ) : bool
     {
-        if ( filter_var($ip, FILTER_VALIDATE_IP) ) {
+        if ( filter_var($ip, FILTER_VALIDATE_IP) )
             return true;
-        } else {
-            return false;
-        }
+
+        return false;
     }
 
     /**
@@ -106,13 +105,12 @@ class Ip
      *
      * @return boolean - true/false
      */
-    public static function isValidIPv4( $ip )
+    public static function isValidIPv4( $ip ) : bool
     {
-        if ( filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) ) {
+        if ( filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) )
             return true;
-        } else {
-            return false;
-        }
+
+        return false;
     }
 
     /**
@@ -122,7 +120,7 @@ class Ip
      *
      * @return boolean - true/false
      */
-    public static function isValidIPv4RegEx( $ip )
+    public static function isValidIPv4RegEx( $ip ) : bool
     {
         return preg_match('/^(([1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]).){3}([1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/', $ip);
     }
@@ -135,13 +133,12 @@ class Ip
      *
      * @return boolean - true/false
      */
-    public static function isValidIPv4NoPriv( $ip )
+    public static function isValidIPv4NoPriv( $ip ) : bool
     {
-        if ( filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 | FILTER_FLAG_NO_PRIV_RANGE) ) {
+        if ( filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 | FILTER_FLAG_NO_PRIV_RANGE) )
             return true;
-        } else {
-            return false;
-        }
+
+        return false;
     }
 
     /**
@@ -151,13 +148,13 @@ class Ip
      *
      * @return boolean - true/false
      */
-    public static function isValidIPv6( $ip )
+    public static function isValidIPv6( $ip ) : bool
     {
-        if ( filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6) ) {
+        if ( filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6) )
             return true;
-        } else {
-            return false;
-        }
+
+        return false;
+
     }
 
     /**
@@ -168,13 +165,13 @@ class Ip
      *
      * @return boolean - true/false
      */
-    public static function isValidIPv6NoPriv( $ip )
+    public static function isValidIPv6NoPriv( $ip ) : bool
     {
-        if ( filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6 | FILTER_FLAG_NO_PRIV_RANGE) ) {
+        if ( filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6 | FILTER_FLAG_NO_PRIV_RANGE) )
             return true;
-        } else {
-            return false;
-        }
+
+        return false;
+
     }
 
     /**
@@ -186,12 +183,11 @@ class Ip
      */
     public static function ipToNumber( $ip )
     {
-        if ( trim($ip) == '' ) {
+        if ( trim($ip) == '' )
             return 0;
-        } else {
-            $tmp = preg_split("#\.#", $ip);
 
-            return ($tmp[ 3 ] + $tmp[ 2 ] * 256 + $tmp[ 1 ] * 256 * 256 + $tmp[ 0 ] * 256 * 256 * 256);
-        }
+        $tmp = preg_split("#\.#", $ip);
+
+        return ($tmp[ 3 ] + $tmp[ 2 ] * 256 + $tmp[ 1 ] * 256 * 256 + $tmp[ 0 ] * 256 * 256 * 256);
     }
 }

@@ -4,7 +4,14 @@ namespace Cafesource\Helper;
 
 class File
 {
-    public static function byteFormat( $bytes, $precision = 2, $lang = 'fa' )
+    /**
+     * @param        $bytes
+     * @param int    $precision
+     * @param string $lang
+     *
+     * @return string
+     */
+    public static function byteFormat( $bytes, int $precision = 2, string $lang = 'fa' ) : string
     {
         $units = [
             'fa' => ['بایت', 'کیلوبایت', 'مگابایت', 'گیگابایت', 'ترابایت'],

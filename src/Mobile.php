@@ -4,6 +4,11 @@ namespace Cafesource\Helper;
 
 class Mobile
 {
+    /**
+     * @param $phone
+     *
+     * @return false|string
+     */
     public static function sanitize( $phone )
     {
         /**

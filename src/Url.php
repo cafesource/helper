@@ -8,14 +8,13 @@ class Url
      *  Get the file size of any remote resource (using curl),
      *  either in bytes or - default - as human-readable formatted string.
      *
-     * @param string  $url        Takes the remote object's URL.
-     * @param boolean $formatSize Whether to return size in bytes or formatted.
-     * @param boolean $useHead    Whether to use HEAD requests. If false, uses GET.
+     * @param string  $url     Takes the remote object's URL.
+     * @param boolean $useHead Whether to use HEAD requests. If false, uses GET.
      *
      * @return  string                 Returns human-readable formatted size
      *                                  or size in bytes (default: formatted).
      */
-    public static function fileSize( $url, $useHead = true )
+    public static function fileSize( string $url, bool $useHead = true )
     {
         $ch = curl_init($url);
         curl_setopt_array($ch, array(
@@ -39,7 +38,12 @@ class Url
         return $clen; // return size in bytes
     }
 
-    public static function current( $removeQueryString = false )
+    /**
+     * @param false $removeQueryString
+     *
+     * @return string
+     */
+    public static function current( bool $removeQueryString = false ) : string
     {
         $pageURL = 'http';
         if ( $_SERVER[ "HTTPS" ] == "on" ) {

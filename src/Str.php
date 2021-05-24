@@ -6,12 +6,12 @@ class Str
     /**
      * String slugger
      *
-     * @param        $string
+     * @param string $string
      * @param string $separator
      *
      * @return string
      */
-    public static function slug( $string, $separator = '-' )
+    public static function slug( string $string, string $separator = '-' ) : string
     {
         $flip   = $separator == '-' ? '_' : '-';
         $string = preg_replace('![' . preg_quote($flip) . ']+!u', $separator, $string);
@@ -36,7 +36,7 @@ class Str
      *
      * @return string
      */
-    public static function randomString( $length )
+    public static function random( int $length ) : string
     {
         $randomString = '';
         $characters   = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';

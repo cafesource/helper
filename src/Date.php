@@ -12,7 +12,7 @@ class Date
      *
      * @return int
      */
-    public static function daysBetweenDate( $firstDate, $lastDate )
+    public static function daysBetweenDate( $firstDate, $lastDate ) : int
     {
         $diff = $firstDate - $lastDate;
         return ceil($diff / (60 * 60 * 24));
