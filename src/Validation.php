@@ -84,7 +84,7 @@ class Validation
      *
      * @return bool
      */
-    public function tel( $tel ) : bool
+    public static function tel( $tel ) : bool
     {
         if ( is_numeric($tel) )
             return true;
@@ -97,7 +97,7 @@ class Validation
      *
      * @return bool
      */
-    public function zipCode( $code ) : bool
+    public static function zipCode( $code ) : bool
     {
         if ( is_numeric($code) && strlen($code) == 10 )
             return true;
