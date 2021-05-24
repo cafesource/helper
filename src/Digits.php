@@ -2,7 +2,7 @@
 
 namespace Cafesource\Helper;
 
-class Converter
+class Digits
 {
     /**
      * @var array numbers
@@ -16,11 +16,11 @@ class Converter
     /**
      * Convert to english number
      *
-     * @param string $string
+     * @param $string
      *
-     * @return string
+     * @return array|string|null
      */
-    public static function toEnglish( string $string ) : string
+    public static function toEnglish( $string )
     {
         $string = str_replace(static::numbers[ 'persian' ], static::numbers[ 'english' ], $string);
         return str_replace(static::numbers[ 'arabic' ], static::numbers[ 'english' ], $string);
@@ -29,11 +29,11 @@ class Converter
     /**
      * Convert to persian number
      *
-     * @param string $string
+     * @param $string
      *
-     * @return string
+     * @return array|string|null
      */
-    public static function toPersian( string $string ) : string
+    public static function toPersian( $string )
     {
         $string = str_replace(static::numbers[ 'english' ], static::numbers[ 'persian' ], $string);
         return str_replace(static::numbers[ 'arabic' ], static::numbers[ 'persian' ], $string);
@@ -42,11 +42,11 @@ class Converter
     /**
      * Convert to arabic number
      *
-     * @param string $string
+     * @param  $string
      *
-     * @return string
+     * @return array|string|null
      */
-    public static function toArabic( string $string ) : string
+    public static function toArabic( $string )
     {
         $string = str_replace(static::numbers[ 'english' ], static::numbers[ 'arabic' ], $string);
         return str_replace(static::numbers[ 'persian' ], self::numbers[ 'arabic' ], $string);

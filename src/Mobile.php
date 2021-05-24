@@ -14,7 +14,7 @@ class Mobile
         /**
          * Convert all chars to en digits
          */
-        $phone = Converter::toEnglish($phone);
+        $phone = Digits::toEnglish($phone);
         # 00989185223232
         if ( strpos($phone, '0098') === 0 ) {
             $phone = substr($phone, 4);
