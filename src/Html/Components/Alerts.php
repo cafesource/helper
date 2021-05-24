@@ -1,6 +1,8 @@
 <?php
 
-namespace Cafesource\Helper\Alert;
+namespace Cafesource\Helper\Html\Components;
+
+use Cafesource\Helper\Html\Components\Alert\Manager;
 
 /**
  * Class Alerts
@@ -15,7 +17,7 @@ class Alerts
     /**
      * The alert manager with singleton
      *
-     * @var Manager $manager
+     * @var mixed $manager
      */
     protected static $manager = null;
 

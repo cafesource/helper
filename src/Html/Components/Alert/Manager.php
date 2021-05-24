@@ -1,6 +1,8 @@
 <?php
 
-namespace Cafesource\Helper\Alert;
+namespace Cafesource\Helper\Html\Components\Alert;
+
+use Cafesource\Helper\Html\Components\Alert;
 
 class Manager
 {
@@ -12,7 +14,7 @@ class Manager
     /**
      * @var array $alerts
      */
-    protected $alerts = [];
+    protected array $alerts = [];
 
     public function __construct( $name = null )
     {

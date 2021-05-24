@@ -1,8 +1,9 @@
 <?php
 
-namespace Cafesource\Helper\Alert;
+namespace Cafesource\Helper\Html\Components;
 
 use Illuminate\Support\Arr;
+use Cafesource\Helper\Html\Components\Alert\AlertHtml;
 
 class Alert
 {
@@ -21,14 +22,14 @@ class Alert
     protected array $alert = [];
 
     /**
-     * @var Html
+     * @var AlertHtml $html
      */
-    protected $html;
+    protected AlertHtml $html;
 
     public function __construct( $name )
     {
         $this->name = $name;
-        $this->html = new Html();
+        $this->html = new AlertHtml();
     }
 
     /**
@@ -215,7 +216,7 @@ class Alert
         if ( !is_null($default) )
             $classes = array_merge($default, $classes);
 
-        return implode(' ', $classes);
+        return $this->html->classes($classes);
     }
 
     /**
@@ -229,11 +230,7 @@ class Alert
         if ( !is_null($default) )
             $attributes = array_merge($default, $attributes);
 
-        $output = '';
-        foreach ( $attributes as $key => $value )
-            $output .= " {$key}='{$value}'";
-
-        return $output;
+        return $this->html->attributes($attributes);
     }
 
     /**
@@ -252,6 +249,8 @@ class Alert
     }
 
     /**
+     * Convert alert to html
+     *
      * @return string
      */
     public function toHtml() : string
@@ -265,15 +264,29 @@ class Alert
         $output .= $this->html->content($this->getContent(), $this->get('text.class'), ['alert-content']);
 
         # The alert buttons
-        if ( $this->get('buttons.items', false) ) {
+        if ( $this->get('buttons.items', false) )
             $output .= $this->html->buttons($this, $this->get('buttons.items', []));
-        }
 
         $output .= '</div>';
 
         return $output;
     }
 
+    /**
+     * The alert to array
+     *
+     * @return array
+     */
+    public function toArray() : array
+    {
+        return $this->alert();
+    }
+
+    /**
+     * The alert info
+     *
+     * @return array
+     */
     public function alert() : array
     {
         return $this->alert;

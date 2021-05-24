@@ -1,8 +1,10 @@
 <?php
 
-namespace Cafesource\Helper\Alert;
+namespace Cafesource\Helper\Html\Components\Alert;
 
-class Html
+use Cafesource\Helper\Html\HtmlMaker;
+
+class AlertHtml extends HtmlMaker
 {
     /**
      * @param $title
@@ -67,32 +69,6 @@ class Html
             $output .= "<span>{$button[ 'text' ]}</span>";
 
         $output .= '</a>';
-
-        return $output;
-    }
-
-    /**
-     * Convert array class to string
-     *
-     * @param array $classes
-     *
-     * @return string
-     */
-    public function classes( array $classes = [] ) : string
-    {
-        return implode(' ', $classes);
-    }
-
-    /**
-     * @param $attrs
-     *
-     * @return string
-     */
-    public function attributes( $attrs ) : string
-    {
-        $output = '';
-        foreach ( $attrs as $key => $value )
-            $output .= " {$key}='{$value}'";
 
         return $output;
     }
