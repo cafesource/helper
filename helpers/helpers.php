@@ -7,9 +7,9 @@ if ( !function_exists('selected') ) {
      * @param $name
      * @param $value
      *
-     * @return string|null
+     * @return mixed
      */
-    function selected( $name, $value ) : ?string
+    function selected( $name, $value )
     {
         return Field::selected($name, $value);
     }
@@ -20,9 +20,9 @@ if ( !function_exists('checked') ) {
      * @param $name
      * @param $value
      *
-     * @return string|null
+     * @return mixed
      */
-    function checked( $name, $value ) : ?string
+    function checked( $name, $value )
     {
         return Field::checked($name, $value);
     }
