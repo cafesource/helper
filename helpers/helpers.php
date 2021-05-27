@@ -9,7 +9,7 @@ if ( !function_exists('selected') ) {
      *
      * @return string|null
      */
-    function selected( $name, $value )
+    function selected( $name, $value ) : ?string
     {
         return Field::selected($name, $value);
     }
@@ -22,7 +22,7 @@ if ( !function_exists('checked') ) {
      *
      * @return string|null
      */
-    function checked( $name, $value )
+    function checked( $name, $value ) : ?string
     {
         return Field::checked($name, $value);
     }
