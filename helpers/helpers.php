@@ -7,7 +7,7 @@ if ( !function_exists('selected') ) {
      * @param $name
      * @param $value
      *
-     * @return mixed
+     * @return string|null
      */
     function selected( $name, $value )
     {
@@ -20,7 +20,7 @@ if ( !function_exists('checked') ) {
      * @param $name
      * @param $value
      *
-     * @return mixed
+     * @return string|null
      */
     function checked( $name, $value )
     {
