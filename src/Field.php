@@ -18,7 +18,7 @@ class Field
      *
      * @return string|null
      */
-    public static function selected( string $name, string $value )
+    public static function selected( $name, $value ) : ?string
     {
         if ( $name == $value )
             return 'selected';
@@ -35,7 +35,7 @@ class Field
      *
      * @return string|null
      */
-    public static function checked( string $name, string $value )
+    public static function checked( $name, $value ) : ?string
     {
         if ( $name == $value )
             return 'checked';
