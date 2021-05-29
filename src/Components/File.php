@@ -17,9 +17,8 @@ class File
         $this->set('extension', $info[ 'extension' ] ?? null);
         $this->set('filename', $info[ 'filename' ] ?? null);
 
-        if ( file_exists($path) && is_file($path) ) {
+        if ( file_exists($path) && is_file($path) )
             $this->set('mime', finfo_file(finfo_open(FILEINFO_MIME_TYPE), $path));
-        }
     }
 
     public function __set( $name, $value )
@@ -35,7 +34,12 @@ class File
         return null;
     }
 
-    public function info()
+    /**
+     * The file info
+     *
+     * @return array
+     */
+    public function info() : array
     {
         return $this->file;
     }
