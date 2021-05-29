@@ -2,23 +2,18 @@
 
 namespace Cafesource\Helper;
 
-/**
- * Class Field
- *
- * @package Larabase\Cms\Helper
- */
 class Field
 {
     /**
      * Selected
      * add attribute selected
      *
-     * @param string $name
-     * @param string $value
+     * @param $name
+     * @param $value
      *
      * @return string|null
      */
-    public static function selected( $name, $value ) : ?string
+    public static function selected( $name, $value )
     {
         if ( $name == $value )
             return 'selected';
@@ -30,12 +25,12 @@ class Field
      * Checked
      * add attribute checkbox
      *
-     * @param string $name
-     * @param string $value
+     * @param $name
+     * @param $value
      *
      * @return string|null
      */
-    public static function checked( $name, $value ) : ?string
+    public static function checked( $name, $value )
     {
         if ( $name == $value )
             return 'checked';
