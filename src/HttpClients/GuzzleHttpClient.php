@@ -32,14 +32,14 @@ class GuzzleHttpClient implements HttpClientInterface
      *
      * @var int
      */
-    protected $timeOut = 30;
+    protected int $timeOut = 30;
 
     /**
      * Connection timeout of the request in seconds.
      *
      * @var int
      */
-    protected $connectTimeOut = 10;
+    protected int $connectTimeOut = 10;
 
     /**
      * @param Client|null $client
@@ -51,6 +51,8 @@ class GuzzleHttpClient implements HttpClientInterface
 
     /**
      * Unwrap Promises.
+     *
+     * @throws \Throwable
      */
     public function __destruct()
     {
@@ -64,7 +66,7 @@ class GuzzleHttpClient implements HttpClientInterface
      *
      * @return GuzzleHttpClient
      */
-    public function setClient( Client $client )
+    public function setClient( Client $client ) : GuzzleHttpClient
     {
         $this->client = $client;
 
@@ -97,7 +99,7 @@ class GuzzleHttpClient implements HttpClientInterface
         $this->timeOut        = $timeOut;
         $this->connectTimeOut = $connectTimeOut;
 
-        $body    = isset($options[ 'body' ]) ? $options[ 'body' ] : null;
+        $body    = $options[ 'body' ] ?? null;
         $options = $this->getOptions($headers, $body, $options, $timeOut, $isAsyncRequest, $connectTimeOut);
 
         try {
@@ -132,7 +134,7 @@ class GuzzleHttpClient implements HttpClientInterface
      *
      * @return array
      */
-    private function getOptions( array $headers, $body, $options, $timeOut, $isAsyncRequest = false, $connectTimeOut = 10 )
+    private function getOptions( array $headers, $body, $options, $timeOut, $isAsyncRequest = false, $connectTimeOut = 10 ) : array
     {
         $default_options = [
             RequestOptions::HEADERS         => $headers,
@@ -148,7 +150,7 @@ class GuzzleHttpClient implements HttpClientInterface
     /**
      * @return int
      */
-    public function getTimeOut()
+    public function getTimeOut() : int
     {
         return $this->timeOut;
     }
@@ -156,7 +158,7 @@ class GuzzleHttpClient implements HttpClientInterface
     /**
      * @return int
      */
-    public function getConnectTimeOut()
+    public function getConnectTimeOut() : int
     {
         return $this->connectTimeOut;
     }
