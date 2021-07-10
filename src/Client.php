@@ -7,7 +7,7 @@ class Client
     /**
      * Get client ip
      *
-     * @return string|float
+     * @return array|false|string
      */
     public static function ip()
     {
@@ -95,7 +95,7 @@ class Client
     /**
      * The user browser
      *
-     * @return array
+     * @return array|string
      */
     public static function browser( $key = null )
     {
