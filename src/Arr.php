@@ -16,7 +16,7 @@ class Arr
      *
      * @return bool
      */
-    public static function isJson( $string )
+    public static function isJson( $string ) : bool
     {
         @json_decode($string);
         return (json_last_error() == JSON_ERROR_NONE);
@@ -33,7 +33,7 @@ class Arr
      *
      * @return bool False if not serialized and true if it was.
      */
-    public static function isSerialize( $data, $strict = true )
+    public static function isSerialize( string $data, bool $strict = true ) : bool
     {
         // if it isn't a string, it isn't serialized.
         if ( !is_string($data) ) {
@@ -102,7 +102,7 @@ class Arr
      *
      * @return array
      */
-    public static function groupBy( $array, $field, $createSubArray = true )
+    public static function groupBy( $array, $field, bool $createSubArray = true ) : array
     {
         $arraySorted = [];
         if ( is_object(current($array)) ) {
